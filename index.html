@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai社会认知调研</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#6366F1',
+                        neutral: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .shadow-soft {
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen flex flex-col">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-bar-chart text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-800">暑期调研</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-primary transition-custom">首页</a>
+                
+            </nav>
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- 问卷标题和介绍 -->
+            <div class="text-center mb-10 animate-fade-in">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">ai社会认知调研问卷</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">感谢您参与本次调研，您的反馈对我们至关重要。本问卷预计将占用您1-2分钟时间，请根据您的实际情况填写。</p>
+            </div>
+
+            <!-- 问卷容器 -->
+            <div class="bg-white rounded-xl shadow-soft p-6 md:p-8 mb-10 transform transition-all duration-500 hover:shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                        <i class="fa fa-list-alt text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">请完成以下问卷</h3>
+                </div>
+                
+                <!-- 问卷将嵌入到这个容器中 -->
+                <div id="sv-builtin-container" class="w-full"></div>
+            </div>
+
+            <!-- 信息卡片 -->
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-6 md:p-8">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <i class="fa fa-info-circle text-primary mr-2"></i>
+                    关于本次调研
+                </h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                        <span>您的所有回答都将被严格保密，仅用于统计分析</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                        调研结果将帮助我们助力ai发展
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                        完成问卷后，您有机会参与我们的抽奖活动
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-bar-chart text-white text-xl"></i>
+                        <h3 class="text-xl font-bold text-white">智享ai暑期实践小组</h3>
+                    </div>
+                    <p class="text-gray-400">十分感谢您的填写，您的填写将被用于改善ai体系结构</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <!-- <li><a href="#" class="text-gray-400 hover:text-white transition-custom">关于我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">服务条款</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">隐私政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">联系我们</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-2"></i>
+                            <a href="mailto:support@surveypro.com" class="text-gray-400 hover:text-white transition-custom">3094135601@qq.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-2"></i>
+                            <span class="text-gray-400">3094135601</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition-custom">
+                            <i class="fa fa-weixin text-white"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition-custom">
+                            <i class="fa fa-weibo text-white"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition-custom">
+                            <i class="fa fa-linkedin text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 智享ai暑期实践小组 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 问卷嵌入脚本 -->
+    <script src="https://assets.xmplus.cn/surveylite/embed/embed.min.js"></script>
+    <script>
+        // 问卷相关回调函数
+        function onSubmit() {
+            console.log('问卷已提交');
+            // 显示提交成功消息
+            const container = document.querySelector('#sv-builtin-container');
+            container.innerHTML = `
+                <div class="text-center py-10">
+                    <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-check text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">感谢您的参与！</h3>
+                    <p class="text-gray-600">您的反馈对我们非常重要。</p>
+                </div>
+            `;
+        }
+
+        function onClose() {
+            console.log('问卷窗口已关闭');
+            // 可以在这里添加关闭问卷后的逻辑
+        }
+
+        function handleLoad(data) {
+            console.log("问卷加载完成", data);
+            // 问卷加载完成后的操作
+        }
+
+        function onFailed(msg) {
+            console.error("问卷加载失败: ", msg);
+            // 显示加载失败消息
+            const container = document.querySelector('#sv-builtin-container');
+            container.innerHTML = `
+                <div class="text-center py-10">
+                    <div class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-exclamation-triangle text-3xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">加载失败</h3>
+                    <p class="text-gray-600">${msg || '抱歉，问卷加载失败，请稍后重试。'}</p>
+                </div>
+            `;
+        }
+
+        // 页面加载完成后初始化问卷
+        window.onload = function() {
+            // 添加页面加载动画
+            document.body.classList.add('loaded');
+            
+            // 初始化问卷
+            window.surveylite.initSurvey({
+                "sendId": "", // 从发送管理中获取发送id，可选项
+                "sid": "8697808709354496", // 问卷ID
+                "channelId": "8697890906462208",
+                "width": "100%", // 改为100%以适应容器宽度
+                "departmentCode": "",
+                "externalUserId": "",
+                "externalCompanyId": "",
+                "env": "https://www.surveyplus.cn",
+                "language": "", // 开启多语言设置后可控制受访者显示问卷内容，可选项
+                "animation": true,
+                "button": true, // 配合自动翻页的功能使用，可不显示按钮，可选项
+                "onClose": onClose, // 关闭窗口回调函数，可选项
+                "onSubmit": onSubmit, // 提交问卷回调函数，可选项
+                "onLoad": handleLoad, // 打开问卷回调函数，可选项
+                "onFailed": onFailed, // 问卷打开失败回调函数，可选项
+                "container": '#sv-builtin-container', // 问卷将嵌入在指定容器内
+                "parameters": { // 自定义参数
+                    "key": "value"
+                }
+            });
+
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 10) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                    header.classList.add('shadow');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                    header.classList.remove('shadow');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
